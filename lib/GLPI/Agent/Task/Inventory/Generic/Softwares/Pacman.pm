@@ -19,7 +19,7 @@ sub doInventory {
 
     my $packages = _getPackagesList(
         logger  => $logger,
-        command => 'pacman -Qqi'
+        command => 'cat /etc/glpi-agent/filtered_packs.txt | xargs pacman -Qqi'
     );
     return unless $packages;
 
